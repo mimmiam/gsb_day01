@@ -8,8 +8,31 @@ class CounterScreen extends StatefulWidget {
 }
 
 class _CounterScreenState extends State<CounterScreen> {
+  int count = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Counter'),
+      ),
+      body: Center(
+        child: Text(
+          'You pressed button $count time',
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.red,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          count++;
+          print(count);
+          setState(() {});
+        },
+      ),
+    );
   }
 }
