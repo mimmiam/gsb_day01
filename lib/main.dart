@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gsb_day01/contactus.dart';
+import 'package:gsb_day01/profile.dart';
 import 'counter.dart';
 
 void main() {
@@ -11,7 +13,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: CounterScreen(),
+      routes: {
+        '/counter': ((context) => CounterScreen()),
+        '/contact': ((context) => ContactScreen()),
+        '/profile': ((context) => ProfileCard()),
+      },
+      theme: ThemeData(
+        textTheme: TextTheme(
+          headline1: TextStyle(
+            color: Colors.white,
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      home: ProfileCard(),
     );
   }
 }

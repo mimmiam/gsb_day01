@@ -11,13 +11,14 @@ class _CounterScreenState extends State<CounterScreen> {
   int count = 0;
   @override
   Widget build(BuildContext context) {
+    int limitCount = ModalRoute.of(context)!.settings.arguments as int;
     return Scaffold(
       appBar: AppBar(
         title: Text('Counter'),
       ),
       body: Center(
         child: Text(
-          'You pressed button $count time',
+          'You pressed button $count/$limitCount time',
           style: TextStyle(
             fontSize: 20,
             color: Colors.red,
@@ -29,6 +30,10 @@ class _CounterScreenState extends State<CounterScreen> {
         child: Icon(Icons.add),
         onPressed: () {
           count++;
+          if (count > limitCount) {
+            count = 0;
+            Navigator.pushNamed(context, '/contact');
+          }
           print(count);
           setState(() {});
         },
