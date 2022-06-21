@@ -14,12 +14,12 @@ class _CounterScreenState extends State<CounterScreen> {
     int limitCount = ModalRoute.of(context)!.settings.arguments as int;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Counter'),
+        title: const Text('Counter'),
       ),
       body: Center(
         child: Text(
           'You pressed button $count/$limitCount time',
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 20,
             color: Colors.red,
             fontWeight: FontWeight.bold,
@@ -27,7 +27,7 @@ class _CounterScreenState extends State<CounterScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           count++;
           if (count > limitCount) {
