@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gsb_day01/contactus.dart';
+import 'package:gsb_day01/contact.dart';
 import 'package:gsb_day01/profile.dart';
 import 'counter.dart';
 
@@ -19,6 +19,9 @@ class MyApp extends StatelessWidget {
         '/profile': ((context) => ProfileCard()),
       },
       theme: ThemeData(
+        primaryColor: Colors.purple,
+        primarySwatch: Colors.purple,
+        secondaryHeaderColor: Colors.pink,
         textTheme: TextTheme(
           headline1: TextStyle(
             color: Colors.white,

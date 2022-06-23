@@ -27,12 +27,13 @@ class _CounterScreenState extends State<CounterScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).secondaryHeaderColor ,
         child: Icon(Icons.add),
         onPressed: () {
           count++;
           if (count > limitCount) {
             count = 0;
-            Navigator.pushNamed(context, '/contact');
+            Navigator.pushNamed(context, '/profile');
           }
           print(count);
           setState(() {});
